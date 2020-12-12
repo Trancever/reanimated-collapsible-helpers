@@ -1,25 +1,48 @@
 import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import ReanimatedAccordionHelpers from 'reanimated-accordion-helpers';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import * as Font from 'expo-font';
+
+import { Home } from './Home';
+import { Faq } from './examples/faq/Faq';
+import {
+  Montserrat,
+  MontserratBold,
+  MontserratSemiBold,
+  OpenSans,
+  OpenSansBold,
+  OpenSansSemiBold,
+} from './fonts';
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [fontsLoaded] = Font.useFonts({
+    [OpenSans]: require('./assets/fonts/OpenSans-Regular.ttf'),
+    [OpenSansBold]: require('./assets/fonts/OpenSans-Bold.ttf'),
+    [OpenSansSemiBold]: require('./assets/fonts/OpenSans-SemiBold.ttf'),
+    [Montserrat]: require('./assets/fonts/Montserrat-Regular.ttf'),
+    [MontserratSemiBold]: require('./assets/fonts/Montserrat-SemiBold.ttf'),
+    [MontserratBold]: require('./assets/fonts/Montserrat-Bold.ttf'),
+  });
 
-  React.useEffect(() => {
-    ReanimatedAccordionHelpers.multiply(3, 7).then(setResult);
-  }, []);
+  if (!fontsLoaded) return null;
 
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ title: 'Examples' }}
+        />
+        <Stack.Screen name="FAQ" component={Faq} />
+        {/* <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ title: 'Examples' }}
+        /> */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
