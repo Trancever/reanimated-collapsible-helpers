@@ -1,0 +1,22 @@
+{
+  "name": "reanimated-accordion-helpers-example",
+  "displayName": "ReanimatedAccordionHelpers Example",
+  "expo": {
+    "name": "reanimated-accordion-helpers-example",
+    "slug": "reanimated-accordion-helpers-example",
+    "description": "Example app for reanimated-accordion-helpers",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
