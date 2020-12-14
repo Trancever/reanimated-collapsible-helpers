@@ -32,9 +32,12 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "animation",
+    "accordion",
+    "reanimated"
   ],
-  "repository": "https://twitter.com/trensik",
+  "repository": "https://github.com/Trancever/reanimated-accordion-helpers",
   "author": "Trancever <dawid.urbaniak.dev@gmail.com> (https://twitter.com/trensik)",
   "license": "MIT",
   "bugs": {
@@ -140,8 +143,5 @@
       "module",
       "typescript"
     ]
-  },
-  "dependencies": {
-    "@react-navigation/native": "^5.8.10"
   }
 }

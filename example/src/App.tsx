@@ -5,6 +5,7 @@ import * as Font from 'expo-font';
 
 import { Home } from './Home';
 import { Faq } from './examples/faq/Faq';
+import { Cards } from './examples/cards/Cards';
 import {
   Montserrat,
   MontserratBold,
@@ -37,11 +38,7 @@ export default function App() {
           options={{ title: 'Examples' }}
         />
         <Stack.Screen name="FAQ" component={Faq} />
-        {/* <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ title: 'Examples' }}
-        /> */}
+        <Stack.Screen name="Cards" component={Cards} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -3,8 +3,6 @@ import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import type { StackNavigationProp } from '@react-navigation/stack';
 
-import { Screen } from './Screen';
-
 import { white, lightGrey, blue, lightPurple } from './colors';
 import { ICON_SIZE } from './constants';
 import type { StackParamList } from './types';
@@ -22,9 +20,9 @@ const examples: Array<{
     color: blue,
   },
   {
-    name: 'Card',
+    name: 'Cards',
     icon: 'card-text-outline',
-    label: 'Card',
+    label: 'Cards',
     color: lightPurple,
   },
 ];
