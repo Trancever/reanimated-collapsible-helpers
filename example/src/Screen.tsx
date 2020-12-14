@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-// import { white } from './colors';
-
 type Props = {
   children: React.ReactNode;
 };
@@ -14,7 +12,6 @@ export function Screen({ children }: Props) {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    // backgroundColor: white,
     padding: 16,
   },
 });

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, StyleProp, ViewStyle, Text } from 'react-native';
 import { useAccordionAnimation } from 'reanimated-accordion-helpers';
 
-import { AnimatedAccordionSection } from './AnimatedAccordionSection';
+import { AnimatedAccordionSection } from '../../shared/AnimatedAccordionSection';
 import { AccordionButton } from './AccordionButton';
 import { lightGrey, white, body, black } from '../../colors';
 import { ANSWER_FONT_SIZE } from '../../constants';

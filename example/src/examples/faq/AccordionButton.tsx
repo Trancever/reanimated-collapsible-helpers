@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, TouchableWithoutFeedback, Text, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import type Animated from 'react-native-reanimated';
 
+import { AnimatedChevron } from '../../shared/AnimatedChevron';
 import { white, green } from '../../colors';
 import { QUESTION_FONT_SIZE } from '../../constants';
 import { MontserratSemiBold } from '../../fonts';
@@ -22,15 +23,20 @@ export function AccordionButton({
   expanded,
 }: Props) {
   return (
-    <TouchableWithoutFeedback
+    <TouchableOpacity
       onPress={onButtonPress}
       accessibilityRole="button"
       accessibilityState={{ expanded }}
     >
       <View style={styles.container}>
         <Text style={styles.question}>{question}?</Text>
+        <AnimatedChevron
+          animatedHeight={animatedHeight}
+          height={height}
+          color="green"
+        />
       </View>
-    </TouchableWithoutFeedback>
+    </TouchableOpacity>
   );
 }
 
@@ -39,10 +45,14 @@ const styles = StyleSheet.create({
     backgroundColor: white,
     paddingVertical: 16,
     paddingHorizontal: 16,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   question: {
     fontFamily: MontserratSemiBold,
     fontSize: QUESTION_FONT_SIZE,
     color: green,
+    marginRight: 32,
   },
 });
