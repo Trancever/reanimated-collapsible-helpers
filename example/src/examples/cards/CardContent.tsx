@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, StyleSheet, LayoutChangeEvent } from 'react-native';
+import { View, StyleSheet, LayoutChangeEvent, Platform } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
+
+import { OpenSans } from '../../fonts';
 
 type Props = { color: string };
 
@@ -45,6 +47,12 @@ export function CardContent({ color }: Props) {
             backgroundGradientFrom: '#ffffff',
             backgroundGradientTo: '#ffffff',
             color: () => color,
+            propsForVerticalLabels: {
+              fontFamily: Platform.OS === 'ios' ? undefined : OpenSans,
+            },
+            propsForHorizontalLabels: {
+              fontFamily: Platform.OS === 'ios' ? undefined : OpenSans,
+            },
           }}
           bezier
         />

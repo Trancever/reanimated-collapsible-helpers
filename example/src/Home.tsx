@@ -39,6 +39,7 @@ export function Home({ navigation }: Props) {
           <View style={styles.buttonInnerContainer}>
             <MaterialCommunityIcons
               style={styles.iconStyle}
+              // @ts-ignore
               name={icon}
               color={color}
               size={ICON_SIZE}
