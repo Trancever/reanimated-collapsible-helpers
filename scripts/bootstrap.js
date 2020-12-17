@@ -11,7 +11,6 @@ const options = {
 };
 
 let result;
-
 if (process.cwd() !== root || args.length) {
   if (args.length === 1 && args[0] === 'install') {
     result = child_process.spawnSync('yarn', ['bootstrap'], options);
