@@ -9,7 +9,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "start": "expo start",
-    "test": "jest"
+    "test": "jest",
+    "build": "expo build:web"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
