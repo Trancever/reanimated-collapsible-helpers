@@ -1,6 +1,7 @@
 import React from 'react';
 import { LayoutChangeEvent, StyleSheet } from 'react-native';
 import Animated, { Extrapolate } from 'react-native-reanimated';
+import type { State } from 'reanimated-accordion-helpers';
 
 const { interpolate } = Animated;
 
@@ -9,6 +10,7 @@ type Props = {
   onLayout: (event: LayoutChangeEvent) => void;
   animatedHeight: Animated.Node<number>;
   height: number;
+  state: State;
 };
 
 export function AnimatedAccordionSection({
@@ -16,6 +18,7 @@ export function AnimatedAccordionSection({
   onLayout,
   animatedHeight,
   height,
+  state,
 }: Props) {
   /*
    * Accordion section animation consists of few separate animations:
@@ -27,7 +30,10 @@ export function AnimatedAccordionSection({
    * 4. TranslateY - we animate from -15px to -5px when expanding just to make nice visual effect.
    */
   return (
-    <Animated.View style={[{ height: animatedHeight }]}>
+    <Animated.View
+      style={[{ height: animatedHeight }]}
+      pointerEvents={state === 'expanded' ? 'auto' : 'none'}
+    >
       <Animated.View
         onLayout={onLayout}
         style={[
