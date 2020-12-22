@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 import { Accordion } from './Accordion';
 import { Screen } from '../../Screen';
@@ -28,12 +28,14 @@ const items = [
 export function Faq() {
   return (
     <Screen>
-      <Text style={styles.heading}>FAQs</Text>
-      {items.map(({ answer, question }) => (
-        <View key={question} style={styles.accordionContainer}>
-          <Accordion question={question} answer={answer} />
-        </View>
-      ))}
+      <ScrollView>
+        <Text style={styles.heading}>FAQs</Text>
+        {items.map(({ answer, question }) => (
+          <View key={question} style={styles.accordionContainer}>
+            <Accordion question={question} answer={answer} />
+          </View>
+        ))}
+      </ScrollView>
     </Screen>
   );
 }

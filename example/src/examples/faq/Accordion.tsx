@@ -1,8 +1,11 @@
 import React from 'react';
 import { View, StyleSheet, StyleProp, ViewStyle, Text } from 'react-native';
-import { useAccordionAnimation } from 'reanimated-accordion-helpers';
+import { interpolate, Extrapolate } from 'react-native-reanimated';
+import {
+  useAccordionAnimation,
+  AnimatedSection,
+} from 'reanimated-accordion-helpers';
 
-import { AnimatedAccordionSection } from '../../shared/AnimatedAccordionSection';
 import { AccordionButton } from './AccordionButton';
 import { lightGrey, white, body, black } from '../../colors';
 import { ANSWER_FONT_SIZE } from '../../constants';
@@ -33,16 +36,31 @@ export function Accordion({ question, answer, style }: Props) {
           question={question}
           expanded={state === 'expanded'}
         />
-        <AnimatedAccordionSection
+        <AnimatedSection
           animatedHeight={animatedHeight}
-          height={height}
           onLayout={onLayout}
           state={state}
+          style={{
+            opacity: interpolate(animatedHeight, {
+              inputRange: [0, height],
+              outputRange: [0, 1],
+              extrapolate: Extrapolate.CLAMP,
+            }),
+            transform: [
+              {
+                translateY: interpolate(animatedHeight, {
+                  inputRange: [0, height],
+                  outputRange: [-15, -5],
+                  extrapolate: Extrapolate.CLAMP,
+                }),
+              },
+            ],
+          }}
         >
           <View style={styles.answerContainer}>
             <Text style={styles.answer}>{answer}</Text>
           </View>
-        </AnimatedAccordionSection>
+        </AnimatedSection>
       </View>
     </View>
   );

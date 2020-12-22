@@ -3,11 +3,11 @@ import type { LayoutChangeEvent } from 'react-native';
 import Animated from 'react-native-reanimated';
 
 import { runTiming } from './reanimatedHelpers';
-import type { State } from './types';
+import type { State, Config } from './types';
 
 const { Clock, Value } = Animated;
 
-export function useAccordionAnimation(onToggle?: (state: State) => void) {
+export function useAccordionAnimation(config?: Config) {
   const [height, setHeight] = React.useState(0);
   const [state, setState] = React.useState<State>('collapsed');
 
@@ -15,20 +15,20 @@ export function useAccordionAnimation(onToggle?: (state: State) => void) {
   const { current: progress } = React.useRef(new Value<number>(0));
   const { current: animation } = React.useRef(new Value<number>(0));
   const { current: animatedHeight } = React.useRef(
-    runTiming(clock, progress, animation)
+    runTiming(clock, progress, animation, config?.duration, config?.easing)
   );
 
-  const onPress = React.useCallback(() => {
+  React.useEffect(() => {
     if (state === 'collapsed') {
-      animation.setValue(height);
-      setState('expanded');
-      onToggle?.('expanded');
-    } else {
       animation.setValue(0);
-      setState('collapsed');
-      onToggle?.('collapsed');
+    } else {
+      animation.setValue(height);
     }
-  }, [animation, height, onToggle, state]);
+  }, [state, height, animation]);
+
+  const onPress = React.useCallback(() => {
+    setState((prev) => (prev === 'collapsed' ? 'expanded' : 'collapsed'));
+  }, []);
 
   const onLayout = React.useCallback(
     (event: LayoutChangeEvent) => {

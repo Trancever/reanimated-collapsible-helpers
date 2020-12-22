@@ -14,7 +14,9 @@ const {
 export function runTiming(
   clock: Animated.Clock,
   value: Animated.Value<number>,
-  dest: Animated.Value<number>
+  dest: Animated.Value<number>,
+  duration: number = 250,
+  easing: Animated.EasingFunction = Easing.out(Easing.ease)
 ) {
   const state = {
     finished: new Value(0),
@@ -24,9 +26,9 @@ export function runTiming(
   };
 
   const config = {
-    duration: 250,
+    duration,
     toValue: dest,
-    easing: Easing.out(Easing.ease),
+    easing,
   };
 
   return block([

@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { useAccordionAnimation } from 'reanimated-accordion-helpers';
+import {
+  useAccordionAnimation,
+  AnimatedSection,
+} from 'reanimated-accordion-helpers';
 
-import { AnimatedAccordionSection } from '../../shared/AnimatedAccordionSection';
 import { CardButton } from './CardButton';
 import { CardContent } from './CardContent';
 
@@ -20,7 +22,7 @@ export function Card({ card }: Props) {
     onPress,
     onLayout,
     state,
-  } = useAccordionAnimation();
+  } = useAccordionAnimation({});
 
   return (
     <View style={[styles.card, styles.borderRadius]}>
@@ -32,14 +34,13 @@ export function Card({ card }: Props) {
           state={state}
           card={card}
         />
-        <AnimatedAccordionSection
-          height={height}
+        <AnimatedSection
           animatedHeight={animatedHeight}
           onLayout={onLayout}
           state={state}
         >
           <CardContent color={card.color} />
-        </AnimatedAccordionSection>
+        </AnimatedSection>
       </View>
     </View>
   );
