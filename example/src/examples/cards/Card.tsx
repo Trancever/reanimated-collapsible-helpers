@@ -36,6 +36,7 @@ export function Card({ card }: Props) {
           height={height}
           animatedHeight={animatedHeight}
           onLayout={onLayout}
+          state={state}
         >
           <CardContent color={card.color} />
         </AnimatedAccordionSection>

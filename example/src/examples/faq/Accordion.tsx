@@ -37,6 +37,7 @@ export function Accordion({ question, answer, style }: Props) {
           animatedHeight={animatedHeight}
           height={height}
           onLayout={onLayout}
+          state={state}
         >
           <View style={styles.answerContainer}>
             <Text style={styles.answer}>{answer}</Text>
