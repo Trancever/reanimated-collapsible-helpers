@@ -4,10 +4,10 @@ We want this community to be friendly and respectful to each other. Please follo
 
 ## Development workflow
 
-To get started with the project, run `yarn bootstrap` in the root directory to install the required dependencies for each package:
+To get started with the project, run `yarn` in the root directory to install the required dependencies for each package:
 
 ```sh
-yarn bootstrap
+yarn
 ```
 
 While developing, you can run the [example app](/example/) to test your changes.
@@ -48,10 +48,6 @@ Remember to add tests for your change if possible. Run the unit tests by:
 ```sh
 yarn test
 ```
-
-To edit the Objective-C files, open `example/ios/ReanimatedCollapsibleHelpersExample.xcworkspace` in XCode and find the source files at `Pods > Development Pods > reanimated-collapsible-helpers`.
-
-To edit the Kotlin files, open `example/android` in Android studio and find the source files at `reanimatedcollapsiblehelpers` under `Android`.
 
 ### Commit message convention
 

@@ -7,6 +7,7 @@
     "description": "Example app for reanimated-collapsible-helpers",
     "privacy": "public",
     "version": "1.0.0",
+    "icon": "src/assets/icon.png",
     "platforms": [
       "ios",
       "android",
