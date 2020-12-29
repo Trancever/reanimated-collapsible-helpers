@@ -25,7 +25,7 @@ export function AnimatedSection({
 }: Props) {
   return (
     <Animated.View
-      style={[{ height: animatedHeight }]}
+      style={[{ height: animatedHeight }, styles.overflowHidden]}
       pointerEvents={state === 'expanded' ? 'auto' : 'none'}
     >
       <Animated.View onLayout={onLayout} style={[styles.container, style]}>
@@ -36,6 +36,9 @@ export function AnimatedSection({
 }
 
 const styles = StyleSheet.create({
+  overflowHidden: {
+    overflow: 'hidden',
+  },
   container: {
     position: 'absolute',
     top: 0,
