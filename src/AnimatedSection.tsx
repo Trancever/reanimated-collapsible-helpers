@@ -6,7 +6,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import Animated from 'react-native-reanimated';
-import type { State } from 'reanimated-accordion-helpers';
+import type { State } from './types';
 
 type Props = {
   children: React.ReactNode;

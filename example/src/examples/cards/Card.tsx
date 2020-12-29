@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import {
   useAccordionAnimation,
   AnimatedSection,
-} from 'reanimated-accordion-helpers';
+} from 'reanimated-collapsible-helpers';
 
 import { CardButton } from './CardButton';
 import { CardContent } from './CardContent';

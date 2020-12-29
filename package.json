@@ -1,5 +1,5 @@
 {
-  "name": "reanimated-accordion-helpers",
+  "name": "reanimated-collapsible-helpers",
   "version": "0.1.0",
   "description": "nothing",
   "main": "lib/commonjs/index",
@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "reanimated-accordion-helpers.podspec",
+    "reanimated-collapsible-helpers.podspec",
     "!lib/typescript/example",
     "!**/__tests__",
     "!**/__fixtures__",
@@ -35,10 +35,10 @@
     "ios",
     "android",
     "animation",
-    "accordion",
+    "collapsible",
     "reanimated"
   ],
-  "repository": "https://github.com/Trancever/reanimated-accordion-helpers",
+  "repository": "https://github.com/Trancever/reanimated-collapsible-helpers",
   "author": "Trancever <dawid.urbaniak.dev@gmail.com> (https://twitter.com/trensik)",
   "license": "MIT",
   "bugs": {

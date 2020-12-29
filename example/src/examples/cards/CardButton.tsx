@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import type Animated from 'react-native-reanimated';
 import { Svg, Path, Defs, ClipPath } from 'react-native-svg';
-import type { State } from 'reanimated-accordion-helpers';
+import type { State } from 'reanimated-collapsible-helpers';
 
 import { AnimatedChevron } from '../../shared/AnimatedChevron';
 import type { Card } from '../../types';

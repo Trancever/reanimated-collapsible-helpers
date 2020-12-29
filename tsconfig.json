@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "reanimated-accordion-helpers": ["./src/index"]
+      "reanimated-collapsible-helpers": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

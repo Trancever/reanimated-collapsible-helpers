@@ -4,7 +4,7 @@ import { interpolate, Extrapolate } from 'react-native-reanimated';
 import {
   useAccordionAnimation,
   AnimatedSection,
-} from 'reanimated-accordion-helpers';
+} from 'reanimated-collapsible-helpers';
 
 import { AccordionButton } from './AccordionButton';
 import { lightGrey, white, body, black } from '../../colors';

@@ -1,6 +1,6 @@
 {
-  "name": "reanimated-accordion-helpers-example",
-  "description": "Example app for reanimated-accordion-helpers",
+  "name": "reanimated-collapsible-helpers-example",
+  "description": "Example app for reanimated-collapsible-helpers",
   "version": "0.0.1",
   "private": true,
   "main": "index",

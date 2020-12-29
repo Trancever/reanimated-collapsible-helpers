@@ -1,10 +1,10 @@
 {
-  "name": "reanimated-accordion-helpers-example",
-  "displayName": "ReanimatedAccordionHelpers Example",
+  "name": "reanimated-collapsible-helpers-example",
+  "displayName": "ReanimatedCollapsiblHelpers Example",
   "expo": {
-    "name": "reanimated-accordion-helpers-example",
-    "slug": "reanimated-accordion-helpers-example",
-    "description": "Example app for reanimated-accordion-helpers",
+    "name": "reanimated-collapsible-helpers-example",
+    "slug": "reanimated-collapsible-helpers-example",
+    "description": "Example app for reanimated-collapsible-helpers",
     "privacy": "public",
     "version": "1.0.0",
     "platforms": [
