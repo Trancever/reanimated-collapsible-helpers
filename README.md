@@ -91,7 +91,6 @@ import {
   useAccordionAnimation,
   AnimatedSection,
 } from 'reanimated-collapsible-helpers';
-import { interpolate, Extrapolate } from 'react-native-reanimated';
 
 export default function App() {
   const {
