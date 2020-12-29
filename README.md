@@ -20,7 +20,7 @@ A cross-platform smooth expand/collapse animation helpers for React Native.
 
 ## Demo
 
-<img src="https://user-images.githubusercontent.com/18584155/103284474-9e740080-49db-11eb-9d76-5b05b8e2a22e.gif" width="360">
+<a href="https://user-images.githubusercontent.com/18584155/103291619-7771fa80-49ec-11eb-8656-f812bbb59443.mov"><img src="https://user-images.githubusercontent.com/18584155/103284474-9e740080-49db-11eb-9d76-5b05b8e2a22e.gif" width="360"></a>
 
 ## Installation
 
