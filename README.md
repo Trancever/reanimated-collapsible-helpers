@@ -6,7 +6,8 @@
 
 A cross-platform smooth expand/collapse animation helpers for React Native.
 
-- [Run the example app to see it in action](https://expo.io/@trensik/projects/reanimated-collapsible-helpers-example).
+- [Example mobile app](https://expo.io/@trensik/projects/reanimated-collapsible-helpers-example).
+- [Example web app](https://reanimated-collapsible-helpers.trancever.vercel.app/).
 - Checkout the [example/](https://github.com/Trancever/reanimated-collapsible-helpers/tree/main/example) directory for source code.
 
 ## Features
@@ -16,6 +17,10 @@ A cross-platform smooth expand/collapse animation helpers for React Native.
 - Cross-platform (iOS, Android, Web)
 - Highly customizable
 - Fully typed with [TypeScript](https://typescriptlang.org)
+
+## Demo
+
+<img src="https://user-images.githubusercontent.com/18584155/103284474-9e740080-49db-11eb-9d76-5b05b8e2a22e.gif" width="360">
 
 ## Installation
 
