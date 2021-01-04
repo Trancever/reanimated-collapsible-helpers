@@ -50,7 +50,7 @@ If you are not using Expo, run the following:
 npm install react-native-reanimated
 ```
 
-or 
+or
 
 ```sh
 yarn add react-native-reanimated
@@ -93,13 +93,7 @@ import {
 } from 'reanimated-collapsible-helpers';
 
 export default function App() {
-  const {
-    animatedHeight,
-    height,
-    onPress,
-    onLayout,
-    state,
-  } = useCollapsible();
+  const { animatedHeight, height, onPress, onLayout, state } = useCollapsible();
 
   return (
     <View style={styles.background}>
@@ -152,7 +146,64 @@ const styles = StyleSheet.create({
 });
 ```
 
-[Try this example on Snack](https://snack.expo.io/@trensik/reanimated-collapsible-helpers-example)
+[Try this example on Snack](https://snack.expo.io/@trensik/reanimated-collapsible-helpers-example-new)
+
+## API reference
+
+The package exports one hook and one component:
+
+- `useCollapsible` hook
+- `AnimatedSection` component
+
+### `useCollapsible`
+
+A hook responsible for managing state, animation and providing helper functions.
+
+Usage looks like this:
+
+```js
+const { animatedHeight, height, onPress, onLayout, state } = useCollapsible();
+```
+
+It accepts one argument `config` - an object containing following properties:
+
+- `duration`: A number representing an expand/collapse animation duration (Optional, defaults to `250ms`).
+- `easing`: An easing function used by the animation (Optional, defaults to `Easing.out(Easing.ease)`).
+
+Hook returns an object with following properties:
+
+- `state`: An enum representing a state of the animation - `expanded` or `collapsed`.
+- `height`: A number representing full height of the collapsible section. Handy for defining upper bounds of the custom interpolations.
+- `animatedHeight`: An `Animated.Value` driving collapse/expand animations. It must be passed to the `AnimatedSection` component as a prop.
+- `onLayout`: A function that measures a collapsible element. It must be passed to the `AnimatedSection` component as a prop.
+- `onPress`: A function that toggles animation state when it's called. Pass it to a `Touchable` component, that on press, is supposed to expand/collapse some content.
+
+### `AnimatedSection`
+
+A component that takes care of height measuring and animating.
+
+Basic usage:
+
+```js
+<AnimatedSection
+  animatedHeight={animatedHeight}
+  onLayout={onLayout}
+  state={state}
+>
+  <Text>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis erat
+    suscipit, mollis nibh ut, venenatis lectus.
+  </Text>
+</AnimatedSection>
+```
+
+#### Props
+
+- `children`: (Required) Accepts a React element that will be rendered as `AnimatedSection` content.
+- `animatedHeight`: (Required) An `Animated.Value` driving collapse/expand animations. Pass `animatedHeight` property returned by `useCollapsible` hook.
+- `onLayout`: (Required) A function that measures a collapsible element. Pass `onLayout` function returned by `useCollapsible` hook.
+- `state`: (Required) A state of the animation. It's used internally by the component to properly handle pointer events of the collapsed element. Pass `state` property returned by `useCollapsible` hook.
+- `style`: (Optional) A custom style property that will be passed to the underlying `Animated.View` - animated styles are supported.
 
 ## Contributing
 
