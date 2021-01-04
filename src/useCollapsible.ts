@@ -7,7 +7,7 @@ import type { State, Config } from './types';
 
 const { Clock, Value } = Animated;
 
-export function useAccordionAnimation(config?: Config) {
+export function useCollapsible(config?: Config) {
   const [height, setHeight] = React.useState(0);
   const [state, setState] = React.useState<State>('collapsed');
 

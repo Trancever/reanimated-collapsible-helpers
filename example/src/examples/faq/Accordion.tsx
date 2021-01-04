@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, StyleProp, ViewStyle, Text } from 'react-native';
 import { interpolate, Extrapolate } from 'react-native-reanimated';
 import {
-  useAccordionAnimation,
+  useCollapsible,
   AnimatedSection,
 } from 'reanimated-collapsible-helpers';
 
@@ -18,13 +18,7 @@ type Props = {
 };
 
 export function Accordion({ question, answer, style }: Props) {
-  const {
-    animatedHeight,
-    height,
-    onPress,
-    onLayout,
-    state,
-  } = useAccordionAnimation();
+  const { animatedHeight, height, onPress, onLayout, state } = useCollapsible();
 
   return (
     <View style={styles.shadow}>

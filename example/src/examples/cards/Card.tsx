@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import {
-  useAccordionAnimation,
+  useCollapsible,
   AnimatedSection,
 } from 'reanimated-collapsible-helpers';
 
@@ -16,13 +16,9 @@ type Props = {
 };
 
 export function Card({ card }: Props) {
-  const {
-    animatedHeight,
-    height,
-    onPress,
-    onLayout,
-    state,
-  } = useAccordionAnimation({});
+  const { animatedHeight, height, onPress, onLayout, state } = useCollapsible(
+    {}
+  );
 
   return (
     <View style={[styles.card, styles.borderRadius]}>

@@ -88,7 +88,7 @@ We're done! Now you can build and run the app on your device/simulator.
 import * as React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import {
-  useAccordionAnimation,
+  useCollapsible,
   AnimatedSection,
 } from 'reanimated-collapsible-helpers';
 
@@ -99,7 +99,7 @@ export default function App() {
     onPress,
     onLayout,
     state,
-  } = useAccordionAnimation();
+  } = useCollapsible();
 
   return (
     <View style={styles.background}>
