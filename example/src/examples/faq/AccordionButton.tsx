@@ -11,7 +11,7 @@ type Props = {
   question: string;
   onButtonPress: () => void;
   height: number;
-  animatedHeight: Animated.Node<number>;
+  animatedHeight: Animated.SharedValue<number>;
   expanded: boolean;
 };
 
@@ -55,5 +55,6 @@ const styles = StyleSheet.create({
     fontSize: QUESTION_FONT_SIZE,
     color: green,
     marginRight: 32,
+    flex: 1,
   },
 });

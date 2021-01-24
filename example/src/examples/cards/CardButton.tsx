@@ -11,7 +11,7 @@ import { MontserratSemiBold, MontserratBold, OpenSans } from '../../fonts';
 
 type Props = {
   height: number;
-  animatedHeight: Animated.Node<number>;
+  animatedHeight: Animated.SharedValue<number>;
   onPress: () => void;
   card: Card;
   state: State;
