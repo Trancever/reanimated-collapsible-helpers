@@ -38,6 +38,8 @@ yarn add reanimated-collapsible-helpers
 
 Now we need to install [`react-native-reanimated`](https://github.com/software-mansion/react-native-reanimated).
 
+This library supports both `react-native-reanimated` v1 and v2. To use reanimated v1, make sure to install `reanimated-collapsible-helpers@1.x.x` and if you'd like to use reanimated v2 then install `reanimated-collapsible-helpers@2.x.x`.
+
 If you are using Expo, to ensure that you get the compatible versions of the libraries, run:
 
 ```sh
