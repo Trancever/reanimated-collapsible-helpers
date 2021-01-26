@@ -1,6 +1,6 @@
 {
   "name": "reanimated-collapsible-helpers",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A cross-platform smooth expand/collapse animation helpers for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
