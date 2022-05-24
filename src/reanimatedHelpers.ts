@@ -1,4 +1,4 @@
-import Animated, { Easing } from 'react-native-reanimated';
+import Animated, { EasingNode } from 'react-native-reanimated';
 
 const {
   Value,
@@ -16,7 +16,7 @@ export function runTiming(
   value: Animated.Value<number>,
   dest: Animated.Value<number>,
   duration: number = 250,
-  easing: Animated.EasingFunction = Easing.out(Easing.ease)
+  easing: Animated.EasingFunction = EasingNode.out(EasingNode.ease)
 ) {
   const state = {
     finished: new Value(0),
