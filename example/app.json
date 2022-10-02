@@ -1,6 +1,4 @@
 {
-  "name": "reanimated-collapsible-helpers-example",
-  "displayName": "ReanimatedCollapsiblHelpers Example",
   "expo": {
     "name": "reanimated-collapsible-helpers-example",
     "slug": "reanimated-collapsible-helpers-example",
@@ -8,16 +6,10 @@
     "privacy": "public",
     "version": "1.0.0",
     "icon": "src/assets/icon.png",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "ios": {
       "supportsTablet": true
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "assetBundlePatterns": ["**/*"]
   }
 }
