@@ -2,7 +2,7 @@ import React from 'react';
 import Animated, { Extrapolate } from 'react-native-reanimated';
 import Svg, { Path } from 'react-native-svg';
 
-const { interpolate, concat } = Animated;
+const { interpolateNode, concat } = Animated;
 
 export function AnimatedChevron({
   animatedHeight,
@@ -20,7 +20,7 @@ export function AnimatedChevron({
           transform: [
             {
               rotateZ: concat(
-                interpolate(animatedHeight, {
+                interpolateNode(animatedHeight, {
                   inputRange: [0, height],
                   outputRange: [90, -90],
                   extrapolate: Extrapolate.CLAMP,

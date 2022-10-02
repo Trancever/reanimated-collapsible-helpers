@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, StyleProp, ViewStyle, Text } from 'react-native';
-import { interpolate, Extrapolate } from 'react-native-reanimated';
+import { interpolateNode, Extrapolate } from 'react-native-reanimated';
 import {
   useCollapsible,
   AnimatedSection,
@@ -35,14 +35,14 @@ export function Accordion({ question, answer, style }: Props) {
           onLayout={onLayout}
           state={state}
           style={{
-            opacity: interpolate(animatedHeight, {
+            opacity: interpolateNode(animatedHeight, {
               inputRange: [0, height],
               outputRange: [0, 1],
               extrapolate: Extrapolate.CLAMP,
             }),
             transform: [
               {
-                translateY: interpolate(animatedHeight, {
+                translateY: interpolateNode(animatedHeight, {
                   inputRange: [0, height],
                   outputRange: [-15, -5],
                   extrapolate: Extrapolate.CLAMP,
