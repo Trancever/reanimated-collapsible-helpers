@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import type { StackNavigationProp } from '@react-navigation/stack';
-
+import { StatusBar } from 'expo-status-bar';
 import { white, lightGrey, blue, lightPurple } from './colors';
 import { ICON_SIZE } from './constants';
 import type { StackParamList } from './types';
@@ -34,6 +34,7 @@ type Props = {
 export function Home({ navigation }: Props) {
   return (
     <View>
+      <StatusBar style="dark" />
       {examples.map(({ name, label, icon, color }) => (
         <TouchableOpacity key={name} onPress={() => navigation.navigate(name)}>
           <View style={styles.buttonInnerContainer}>
