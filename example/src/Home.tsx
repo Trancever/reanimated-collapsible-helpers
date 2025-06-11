@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import type { StackNavigationProp } from '@react-navigation/stack';
 

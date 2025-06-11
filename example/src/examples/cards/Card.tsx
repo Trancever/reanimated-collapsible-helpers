@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+
 import {
   useCollapsible,
   AnimatedSection,
@@ -7,7 +8,6 @@ import {
 
 import { CardButton } from './CardButton';
 import { CardContent } from './CardContent';
-
 import { white, black } from '../../colors';
 import type { Card as CardType } from '../../types';
 

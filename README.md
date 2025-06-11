@@ -174,7 +174,7 @@ Hook returns an object with following properties:
 
 - `state`: An enum representing a state of the animation - `expanded` or `collapsed`.
 - `height`: A number representing full height of the collapsible section. Handy for defining upper bounds of the custom interpolations.
-- `animatedHeight`: An `Animated.Value` driving collapse/expand animations. It must be passed to the `AnimatedSection` component as a prop.
+- `animatedHeight`: A `SharedValue` driving collapse/expand animations. It must be passed to the `AnimatedSection` component as a prop.
 - `onLayout`: A function that measures a collapsible element. It must be passed to the `AnimatedSection` component as a prop.
 - `onPress`: A function that toggles animation state when it's called. Pass it to a `Touchable` component, that on press, is supposed to expand/collapse some content.
 

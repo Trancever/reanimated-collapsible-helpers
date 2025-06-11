@@ -1,30 +1,23 @@
 import React from 'react';
 import type { LayoutChangeEvent } from 'react-native';
-import Animated from 'react-native-reanimated';
 
-import { runTiming } from './reanimatedHelpers';
+import { useSharedValue, withTiming } from 'react-native-reanimated';
+
 import type { State, Config } from './types';
-
-const { Clock, Value } = Animated;
 
 export function useCollapsible(config?: Config) {
   const [height, setHeight] = React.useState(0);
   const [state, setState] = React.useState<State>('collapsed');
 
-  const { current: clock } = React.useRef(new Clock());
-  const { current: progress } = React.useRef(new Value<number>(0));
-  const { current: animation } = React.useRef(new Value<number>(0));
-  const { current: animatedHeight } = React.useRef(
-    runTiming(clock, progress, animation, config?.duration, config?.easing)
-  );
+  const animatedHeight = useSharedValue(0);
 
   React.useEffect(() => {
     if (state === 'collapsed') {
-      animation.setValue(0);
+      animatedHeight.value = withTiming(0, config);
     } else {
-      animation.setValue(height);
+      animatedHeight.value = withTiming(height, config);
     }
-  }, [state, height, animation]);
+  }, [state, height, config, animatedHeight]);
 
   const onPress = React.useCallback(() => {
     setState((prev) => (prev === 'collapsed' ? 'expanded' : 'collapsed'));

@@ -1,6 +1,7 @@
 import React from 'react';
-import Svg, { G, Polygon } from 'react-native-svg';
 import { View, StyleSheet } from 'react-native';
+
+import Svg, { G, Polygon } from 'react-native-svg';
 
 export function Ethereum() {
   return (

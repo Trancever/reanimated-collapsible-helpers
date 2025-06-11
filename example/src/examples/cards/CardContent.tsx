@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, LayoutChangeEvent, Platform } from 'react-native';
+
 import { LineChart } from 'react-native-chart-kit';
 
 import { OpenSans } from '../../fonts';

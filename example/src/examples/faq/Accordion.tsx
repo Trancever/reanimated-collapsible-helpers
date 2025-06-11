@@ -1,13 +1,18 @@
 import React from 'react';
 import { View, StyleSheet, StyleProp, ViewStyle, Text } from 'react-native';
-import { interpolate, Extrapolate } from 'react-native-reanimated';
+
+import {
+  interpolate,
+  useAnimatedStyle,
+  Extrapolation,
+} from 'react-native-reanimated';
 import {
   useCollapsible,
   AnimatedSection,
 } from 'reanimated-collapsible-helpers';
 
 import { AccordionButton } from './AccordionButton';
-import { lightGrey, white, body, black } from '../../colors';
+import { white, body, black } from '../../colors';
 import { ANSWER_FONT_SIZE } from '../../constants';
 import { OpenSans } from '../../fonts';
 
@@ -19,6 +24,25 @@ type Props = {
 
 export function Accordion({ question, answer, style }: Props) {
   const { animatedHeight, height, onPress, onLayout, state } = useCollapsible();
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    opacity: interpolate(
+      animatedHeight.value,
+      [0, height],
+      [0, 1],
+      Extrapolation.CLAMP
+    ),
+    transform: [
+      {
+        translateY: interpolate(
+          animatedHeight.value,
+          [0, height],
+          [-15, -5],
+          Extrapolation.CLAMP
+        ),
+      },
+    ],
+  }));
 
   return (
     <View style={styles.shadow}>
@@ -34,22 +58,7 @@ export function Accordion({ question, answer, style }: Props) {
           animatedHeight={animatedHeight}
           onLayout={onLayout}
           state={state}
-          style={{
-            opacity: interpolate(animatedHeight, {
-              inputRange: [0, height],
-              outputRange: [0, 1],
-              extrapolate: Extrapolate.CLAMP,
-            }),
-            transform: [
-              {
-                translateY: interpolate(animatedHeight, {
-                  inputRange: [0, height],
-                  outputRange: [-15, -5],
-                  extrapolate: Extrapolate.CLAMP,
-                }),
-              },
-            ],
-          }}
+          style={animatedStyle}
         >
           <View style={styles.answerContainer}>
             <Text style={styles.answer}>{answer}</Text>
@@ -74,10 +83,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: white,
     borderRadius: 6,
-  },
-  content: {
-    borderBottomWidth: 1,
-    borderBottomColor: lightGrey,
   },
   answerContainer: {
     paddingHorizontal: 16,
