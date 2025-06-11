@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Svg, { Path, G } from 'react-native-svg';
 
 export function Bitcoin() {

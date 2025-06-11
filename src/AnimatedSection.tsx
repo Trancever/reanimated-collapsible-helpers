@@ -5,15 +5,20 @@ import {
   StyleProp,
   ViewStyle,
 } from 'react-native';
-import Animated from 'react-native-reanimated';
+
+import Animated, {
+  type SharedValue,
+  type AnimatedStyle,
+} from 'react-native-reanimated';
+
 import type { State } from './types';
 
 type Props = {
   children: React.ReactNode;
   onLayout: (event: LayoutChangeEvent) => void;
-  animatedHeight: Animated.Node<number>;
+  animatedHeight: SharedValue<number>;
   state: State;
-  style?: StyleProp<Animated.AnimateStyle<ViewStyle>>;
+  style?: StyleProp<AnimatedStyle<ViewStyle>>;
 };
 
 export function AnimatedSection({

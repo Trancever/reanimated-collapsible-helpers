@@ -1,23 +1,37 @@
 {
-  "name": "reanimated-collapsible-helpers-example",
-  "displayName": "ReanimatedCollapsiblHelpers Example",
   "expo": {
-    "name": "reanimated-collapsible-helpers-example",
+    "name": "Reanimated Collapsible Helpers Example",
+    "description": "Example app for Reanimated Collapsible Helpers: https://github.com/Trancever/reanimated-collapsible-helpers",
     "slug": "reanimated-collapsible-helpers-example",
-    "description": "Example app for reanimated-collapsible-helpers",
     "privacy": "public",
     "version": "1.0.0",
-    "icon": "src/assets/icon.png",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "ios": {
-      "supportsTablet": true
+    "orientation": "default",
+    "primaryColor": "#6200EE",
+    "userInterfaceStyle": "automatic",
+    "icon": "./assets/images/icon.png",
+    "newArchEnabled": true,
+    "packagerOpts": {
+      "config": "./metro.config.js",
+      "projectRoots": ""
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "platforms": ["android", "ios", "web"],
+    "owner": "trancever",
+    "ios": {
+      "bundleIdentifier": "com.trancever.reanimated-collapsible-helpers-example",
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "com.trancever.reanimated-collapsible-helpers-example",
+      "versionCode": 1,
+      "icon": "./assets/images/icon.png"
+    },
+    "splash": {
+      "image": "./assets/images/icon.png",
+      "backgroundColor": "#6200EE",
+      "resizeMode": "cover"
+    },
+    "extra": {},
+    "runtimeVersion": "exposdk:53.0.11",
+    "plugins": ["expo-font"]
   }
 }

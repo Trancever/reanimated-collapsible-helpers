@@ -1,17 +1,18 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import type Animated from 'react-native-reanimated';
 
-import { AnimatedChevron } from '../../shared/AnimatedChevron';
+import { SharedValue } from 'react-native-reanimated';
+
 import { white, green } from '../../colors';
 import { QUESTION_FONT_SIZE } from '../../constants';
 import { MontserratSemiBold } from '../../fonts';
+import { AnimatedChevron } from '../../shared/AnimatedChevron';
 
 type Props = {
   question: string;
   onButtonPress: () => void;
   height: number;
-  animatedHeight: Animated.Node<number>;
+  animatedHeight: SharedValue<number>;
   expanded: boolean;
 };
 

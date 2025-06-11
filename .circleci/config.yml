@@ -3,14 +3,14 @@ version: 2.1
 executors:
   default:
     docker:
-      - image: circleci/node:10
-    working_directory: ~/project
+      - image: cimg/node:18.20.2
+    working_directory: ~/reanimated-collapsible-helpers
 
 commands:
   attach_project:
     steps:
       - attach_workspace:
-          at: ~/project
+          at: ~/reanimated-collapsible-helpers
 
 jobs:
   install-dependencies:
@@ -29,8 +29,9 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            yarn install --cwd example --frozen-lockfile
-            yarn install --frozen-lockfile
+            sudo corepack enable
+            yarn --cwd example --immutable
+            yarn --immutable
       - save_cache:
           key: dependencies-{{ checksum "package.json" }}
           paths: node_modules

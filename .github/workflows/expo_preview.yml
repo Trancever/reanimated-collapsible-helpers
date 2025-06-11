@@ -8,33 +8,43 @@ jobs:
     if: github.event.pull_request.head.repo.owner.login == 'Trancever'
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: 10.x
+          node-version-file: .nvmrc
 
       - name: Setup Expo
-        uses: expo/expo-github-action@v5
+        uses: expo/expo-github-action@v7
         with:
-          expo-version: 3.x
-          expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
-          expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
-          expo-cache: true
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
 
-      - name: Restore yarn cache
+      - name: Restore dependencies
         id: yarn-cache
-        uses: actions/cache@v2
+        uses: actions/cache/restore@v4
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}-${{ hashFiles('**/package.json', '!node_modules/**') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+            ${{ runner.os }}-yarn-
 
       - name: Install dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
-          yarn install --cwd example --frozen-lockfile
-          yarn install --frozen-lockfile
+          sudo corepack enable
+          yarn --cwd example --immutable
+          yarn --immutable
+
+      - name: Cache dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: '**/node_modules'
+          key: ${{ steps.yarn-cache.outputs.cache-primary-key }}
+
       - name: Publish Expo app
         working-directory: ./example
         run: expo publish --release-channel=pr-${{ github.event.number }}

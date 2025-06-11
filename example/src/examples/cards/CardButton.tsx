@@ -1,17 +1,18 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import type Animated from 'react-native-reanimated';
+
+import { SharedValue } from 'react-native-reanimated';
 import { Svg, Path, Defs, ClipPath } from 'react-native-svg';
 import type { State } from 'reanimated-collapsible-helpers';
 
-import { AnimatedChevron } from '../../shared/AnimatedChevron';
-import type { Card } from '../../types';
 import { black, heading, body, white } from '../../colors';
 import { MontserratSemiBold, MontserratBold, OpenSans } from '../../fonts';
+import { AnimatedChevron } from '../../shared/AnimatedChevron';
+import type { Card } from '../../types';
 
 type Props = {
   height: number;
-  animatedHeight: Animated.Node<number>;
+  animatedHeight: SharedValue<number>;
   onPress: () => void;
   card: Card;
   state: State;

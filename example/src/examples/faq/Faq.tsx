@@ -2,10 +2,10 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 import { Accordion } from './Accordion';
-import { Screen } from '../../Screen';
-import { HEADING_FONT_SIZE } from '../../constants';
 import { heading } from '../../colors';
+import { HEADING_FONT_SIZE } from '../../constants';
 import { MontserratBold } from '../../fonts';
+import { Screen } from '../../Screen';
 
 const items = [
   {

@@ -2,16 +2,16 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 import { Card } from './Card';
-import { Screen } from '../../Screen';
+import { heading } from '../../colors';
 import {
   HEADING_FONT_SIZE,
   SUBHEADING_FONT_SIZE,
   CURRENT_FONT_SIZE,
 } from '../../constants';
-import { heading } from '../../colors';
 import { MontserratBold, MontserratSemiBold } from '../../fonts';
 import { Bitcoin } from '../../icons/Bitcoin';
 import { Ethereum } from '../../icons/Ethereum';
+import { Screen } from '../../Screen';
 
 const cards = [
   {
